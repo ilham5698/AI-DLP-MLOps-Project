@@ -19,3 +19,10 @@ Proyek ini adalah sistem deteksi kebocoran data otomatis yang mengimplementasika
 1. Install requirements: `pip install streamlit pandas scikit-learn pypdf python-docx plotly`
 2. Generate Database: `python generate_data.py`
 3. Jalankan Aplikasi: `streamlit run app.py`
+graph TD
+    A[generate_data.py] --> B[(dataset_rahasia.csv)]
+    B --> C[dlp_otak.py]
+    D[registry/model.pkl] --> C
+    C --> E[app.py / Scanner]
+    E --> F[(monitoring_log.csv)]
+    F --> G[Dashboard Monitoring]
